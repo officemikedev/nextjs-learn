@@ -12,9 +12,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: learn/dashboardapp/nextjs-dashboard
+    # defaults:
+    #   run:
+    #     working-directory: learn/dashboardapp/nextjs-dashboard
 
     steps:
       - uses: actions/checkout@v4
@@ -26,6 +26,7 @@ jobs:
 
       - name: npm install, build, and test
         run: |
+          cd learn/dashboardapp/nextjs-dashboard
           npm install
           npm run build --if-present
           npm run test --if-present
